@@ -2,14 +2,35 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useMemo } from "react";
 import Card from "../ui/Card";
 import { Column } from "../ui/Column";
 import { Row } from "../ui/Row";
 
 export default function Hero() {
     const { theme } = useTheme();
-
     const isDark = theme === "dark";
+
+    useEffect(() => {
+        const images = [
+            "/app/home.png",
+            "/app/home-light.png",
+            "/app/record.png",
+            "/app/record-light.png",
+            "/app/activity-details.png",
+            "/app/activity-details-light.png",
+        ];
+
+        images.forEach((src) => {
+            const img = new window.Image();
+            img.src = src;
+        });
+    }, []);
+
+    const mounted = useMemo(() => true, []);
+
+    if (!mounted) return null;
+
     return (
         <div className="px-4 flex justify-center items-center">
             <div className="flex-1 w-full max-w-7xl">
@@ -46,7 +67,6 @@ export default function Hero() {
                             </p>
                         </Column>
                     </Column>
-                    {/*  image have phone layer on it */}
                     <Row className="flex-1 md:justify-center md:items-end ">
                         <Image
                             src={
