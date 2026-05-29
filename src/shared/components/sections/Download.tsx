@@ -1,5 +1,8 @@
+"use client";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Download } from "lucide-react";
+import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 import Card from "../ui/Card";
 import { Column } from "../ui/Column";
@@ -9,6 +12,8 @@ const link = "https://github.com/almonsour13/runna/releases/latest";
 const source = "https://github.com/almonsour13/runna";
 
 export default function DownloadSection() {
+    const { theme } = useTheme();
+    const isDark = theme === "dark";
     return (
         <section
             id="download"
@@ -27,7 +32,7 @@ export default function DownloadSection() {
                                 seconds and start your first run today.
                             </p>
                         </Column>
-                        <Row className="gap-2">
+                        <Row className="flex-wrap">
                             <Link
                                 href={link}
                                 target="_blank"
@@ -51,7 +56,7 @@ export default function DownloadSection() {
                         </Row>
 
                         <div className="flex flex-col gap-2 pt-1">
-                            <div className="flex items-center gap-3">
+                            <div className="flex flex-wrap items-center gap-3">
                                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                                     <span className="font-medium text-foreground">
                                         Android
@@ -75,43 +80,17 @@ export default function DownloadSection() {
                             </p>
                         </div>
                     </Column>
-
-                    <Card className="flex-1 p-0 overflow-hidden">
-                        <Column className="w-full gap-0">
-                            <div className="w-full flex items-center gap-2 px-4 py-3 bg-surface-2 border-b border-border">
-                                <span className="text-xs text-muted-foreground ml-2 font-mono">
-                                    install.sh
-                                </span>
-                            </div>
-                            <div className="p-5 font-mono text-xs flex flex-col gap-3">
-                                <div className="flex gap-3">
-                                    <span className="text-primary select-none">
-                                        $
-                                    </span>
-                                    <span className="text-foreground/80">
-                                        git clone
-                                        https://github.com/almonsour13/runna
-                                    </span>
-                                </div>
-                                <div className="flex gap-3">
-                                    <span className="text-primary select-none">
-                                        $
-                                    </span>
-                                    <span className="text-foreground/80">
-                                        cd runna && npm install
-                                    </span>
-                                </div>
-                                <div className="flex gap-3">
-                                    <span className="text-primary select-none">
-                                        $
-                                    </span>
-                                    <span className="text-foreground/80">
-                                        npm run android
-                                    </span>
-                                </div>
-                            </div>
-                        </Column>
-                    </Card>
+                    <Column className="flex-1 md:justify-center md:items-center ">
+                        <Image
+                            src={
+                                isDark ? "/app/home.png" : "/app/home-light.png"
+                            }
+                            alt="Home screen"
+                            width={800}
+                            height={800}
+                            className="hidden md:flex w-56"
+                        />
+                    </Column>
                 </div>
             </div>
         </section>

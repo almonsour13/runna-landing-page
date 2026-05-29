@@ -76,7 +76,7 @@ export default function Footer() {
                     </Row>
 
                     {/* Bottom */}
-                    <Row className="h-20 py-4 justify-between items-center border-t border-border gap-4">
+                    <div className="h-20 py-4 flex flex-col-reverse md:flex-row justify-between md:items-center border-t border-border gap-4">
                         <p className="text-xs text-muted-foreground">
                             © {new Date().getFullYear()} Runna. All rights
                             reserved.
@@ -86,7 +86,7 @@ export default function Footer() {
                                 Developed By Al-Monsour M. Salida
                             </p>
                         </Row>
-                    </Row>
+                    </div>
                 </Column>
             </div>
         </div>

@@ -73,8 +73,8 @@ export default function Hero() {
                                 isDark ? "/app/home.png" : "/app/home-light.png"
                             }
                             alt="Home screen"
-                            width={200}
-                            height={200}
+                            width={800}
+                            height={800}
                             className="hidden md:flex w-44"
                         />
                         <Image
@@ -84,8 +84,8 @@ export default function Hero() {
                                     : "/app/record-light.png"
                             }
                             alt="Record screen"
-                            width={200}
-                            height={200}
+                            width={800}
+                            height={800}
                             className="w-full md:w-60"
                         />
                         <Image
@@ -95,8 +95,8 @@ export default function Hero() {
                                     : "/app/activity-details-light.png"
                             }
                             alt="Activity details"
-                            width={200}
-                            height={200}
+                            width={800}
+                            height={800}
                             className="hidden md:flex w-44"
                         />
                     </Row>
