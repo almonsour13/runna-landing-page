@@ -8,7 +8,8 @@ import Card from "../ui/Card";
 import { Column } from "../ui/Column";
 import { Row } from "../ui/Row";
 
-const link = "https://github.com/almonsour13/runna/releases/latest";
+const link =
+    "https://github.com/almonsour13/runna/releases/download/latest/application-27b6e318-e9f2-43eb-bca1-098c08e1a8a2.1.apk";
 const source = "https://github.com/almonsour13/runna";
 
 export default function DownloadSection() {
