@@ -1,5 +1,6 @@
 import Footer from "@/shared/components/layout/Footer";
 import Header from "@/shared/components/layout/Header";
+import AppPreview from "@/shared/components/sections/AppPreview";
 import Download from "@/shared/components/sections/Download";
 import FAQ from "@/shared/components/sections/FAQ";
 import Features from "@/shared/components/sections/Features";
@@ -14,9 +15,10 @@ export default function Home() {
             <Column className="flex-1 gap-20">
                 <Header />
                 <Hero />
-                <Stats />
                 <Features />
                 <HowItWorks />
+                <AppPreview />
+                <Stats />
                 <Download />
                 <FAQ />
                 <Footer />

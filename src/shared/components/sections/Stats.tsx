@@ -6,19 +6,19 @@ import { Row } from "../ui/Row";
 
 const primaryStats = [
     {
-        value: "<1",
+        value: "5",
         unit: "s",
         label: "GPS update interval",
         description:
-            "Coordinates refresh every second using Kalman filtering to eliminate noise.",
+            "Coordinates update every 5 seconds with a minimum 5m displacement threshold, using a Kalman filter with velocity prediction to smooth your route.",
         tag: { label: "Real-time", icon: Clock, variant: "green" },
     },
     {
-        value: "5",
+        value: "15",
         unit: "m",
-        label: "Tracking accuracy",
+        label: "Accuracy threshold",
         description:
-            "Sub-5m positioning maintained even in dense urban canyons with tall buildings.",
+            "Readings wider than 15m radius are dropped instantly. A multi-layer filter checks speed, jitter, and max displacement before any point is accepted.",
         tag: { label: "GPS precise", icon: MapPin, variant: "blue" },
     },
     {
@@ -26,7 +26,7 @@ const primaryStats = [
         unit: "%",
         label: "Offline capable",
         description:
-            "Record, review, and analyse every run with zero internet connection required.",
+            "Record, review, and analyse every run with zero internet required. All data lives in a local SQLite database on your device.",
         tag: { label: "Offline-first", icon: WifiOff, variant: "primary" },
     },
     {
@@ -34,16 +34,15 @@ const primaryStats = [
         unit: "%",
         label: "Data loss",
         description:
-            "SQLite persists every run locally. No sync failure, no lost kilometres.",
+            "Every run is persisted locally with background tracking active even when the app is minimised, handed off seamlessly between foreground and background.",
         tag: { label: "Always saved", icon: ShieldCheck, variant: "green" },
     },
 ];
-
 export default function Stats() {
     return (
         <section className="px-4 flex justify-center items-center">
             <div className="w-full max-w-7xl flex flex-col gap-6">
-                <Column className="hidden">
+                <Column>
                     <h1 className="text-base text-primary">By the numbers</h1>
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl">
                         Built for performance. Proven by runners.
@@ -53,7 +52,7 @@ export default function Stats() {
                         marketing claim.
                     </p>
                 </Column>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2 overflow-hidden">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2">
                     {primaryStats.map(
                         ({ value, unit, label, description, tag }) => {
                             const TagIcon = tag.icon;
@@ -68,15 +67,14 @@ export default function Stats() {
                                                 {unit}
                                             </span>
                                         </div>
-
                                         <p className="text-sm font-medium">
                                             {label}
                                         </p>
                                         <p className="text-xs text-muted-foreground leading-relaxed">
                                             {description}
                                         </p>
-                                        <Badge className="hidden">
-                                            <Row className="items-center">
+                                        <Badge>
+                                            <Row className="items-center gap-1">
                                                 <TagIcon size={10} />
                                                 {tag.label}
                                             </Row>

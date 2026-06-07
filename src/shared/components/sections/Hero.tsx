@@ -37,6 +37,14 @@ export default function Hero() {
                 <div className="flex flex-col md:flex-row gap-16 md:gap-8 md:items-center">
                     <Column className="flex-1 gap-6 justify-center">
                         <Column className="gap-2">
+                            <div className="w-fit">
+                                <Card className="px-3 h-7 items-center flex flex-row gap-1.5 bg-primary/10 border-primary/20">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                                    <span className="text-xs text-primary font-medium">
+                                        Now available on Android
+                                    </span>
+                                </Card>
+                            </div>
                             <h1 className="text-5xl md:text-6xl leading-tight">
                                 Track Your{" "}
                                 <span className="text-primary">Activity</span>.

@@ -25,11 +25,13 @@ export default function DownloadSection() {
                         <Column>
                             <h1 className="text-base text-primary">Download</h1>
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl">
-                                Ready to run your best
+                                Your next run starts{" "}
+                                <span className="text-primary">here</span>
                             </h2>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                                Free, open source, no account needed. Install in
-                                seconds and start your first run today.
+                            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+                                No sign-up. No subscription. No tracking. Just
+                                download, open, and start running — everything
+                                works offline from day one.
                             </p>
                         </Column>
                         <Row className="flex-wrap">

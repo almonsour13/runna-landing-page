@@ -1,9 +1,12 @@
 import {
     Activity,
+    BarChart2,
     Clock,
     Database,
+    Layers,
     Map,
     MapPin,
+    Share2,
     Smartphone,
 } from "lucide-react";
 import Badge from "../ui/Badge";
@@ -17,13 +20,12 @@ const heading = {
     subDescription:
         "From your first jog to marathon prep — Runna adapts to your pace, not the other way around.",
 };
-
 export const items = [
     {
         icon: MapPin,
         title: "Real-time GPS Tracking",
         description:
-            "Kalman-filtered coordinates update every second. Sub-5m accuracy even in dense urban areas.",
+            "Kalman-filtered coordinates update every 5 seconds. Multi-layer filtering drops readings wider than 15m, keeping your route clean and accurate.",
         badge: null,
     },
     {
@@ -44,7 +46,7 @@ export const items = [
         icon: Smartphone,
         title: "Background Tracking",
         description:
-            "App backgrounded mid-run? No problem. Tracking continues seamlessly with battery-optimised GPS.",
+            "App backgrounded mid-run? No problem. Tracking hands off seamlessly between foreground and background with battery-optimised GPS.",
         badge: null,
     },
     {
@@ -52,13 +54,34 @@ export const items = [
         title: "Smart Scheduling",
         description:
             "Plan upcoming runs with push notification reminders so you never miss a workout.",
-        badge: "New",
+        badge: null,
     },
     {
         icon: Database,
         title: "Offline-first Storage",
         description:
-            "SQLite + Drizzle ORM keeps every run saved locally. No internet required to record or review.",
+            "SQLite + Drizzle ORM keeps every run saved locally. No internet required to record, review, or analyse your history.",
+        badge: null,
+    },
+    {
+        icon: Share2,
+        title: "Share Your Run",
+        description:
+            "Generate a beautiful summary card of your activity — distance, pace, route map, and stats — ready to share with one tap.",
+        badge: null,
+    },
+    {
+        icon: BarChart2,
+        title: "Weekly & Monthly Stats",
+        description:
+            "Visualise your progress with distance trends, calories burned, and pace charts broken down by week, month, or year.",
+        badge: null,
+    },
+    {
+        icon: Layers,
+        title: "Map Style Selection",
+        description:
+            "Switch between Streets, OpenStreetMap, and Satellite Hybrid map styles to match your preference during and after your run.",
         badge: null,
     },
 ];
